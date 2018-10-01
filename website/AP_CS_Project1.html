@@ -1,0 +1,112 @@
+<!-- PROGRAMMED BY NISHANT SRIVASTAVA -->
+<html lang="en">
+<head>
+  <title>QuickNews | Home</title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+
+  <!-- RANDOM STUFF [END] -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <!-- RANDOM STUFF [END] -->
+
+  <link rel="stylesheet" type="text/css" href="css/AP_CS_Project1.css">
+  <script src="javascript/AP_CS_Project1.js"></script>
+
+</head>
+<body>
+
+<!-- FIREBASE STUFF [START] -->
+<script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+<script>
+  var config = {
+    apiKey: "AIzaSyABR4dJb7GsZlGCAYrbCfT7L0u-0atb8j8",
+    authDomain: "personalwebsite-582df.firebaseapp.com",
+    databaseURL: "https://personalwebsite-582df.firebaseio.com",
+    projectId: "personalwebsite-582df",
+    storageBucket: "personalwebsite-582df.appspot.com",
+    messagingSenderId: "746886653035"
+  };
+  firebase.initializeApp(config);
+  var rootRef = firebase.database().ref();
+
+  var titleOne = document.getElementById('Top5News/Title1')
+  var summaryOne = document.getElementById('Top5News/Summary1')
+  var sourceOne = document.getElementById('Top5News/Source1')
+
+  var titleTwo = document.getElementById('Top5News/Title2')
+  var summaryTwo = document.getElementById('Top5News/Summary2')
+  var sourceTwo = document.getElementById('Top5News/Source2')
+
+  var titleThree = document.getElementById('Top5News/Title3')
+  var summaryThree = document.getElementById('Top5News/Summary3')
+  var sourceThree = document.getElementById('Top5News/Source3')
+
+  var dbReference1 = firebase.database().ref('Top5News').child('Title1')
+  var dbReference2 = firebase.database().ref('Top5News').child('Summary1')
+  var dbReference3 = firebase.database().ref('Top5News').child('Source1')
+
+  var dbReference4 = firebase.database().ref('Top5News').child('Title2')
+  var dbReference5 = firebase.database().ref('Top5News').child('Summary2')
+  var dbReference6 = firebase.database().ref('Top5News').child('Source2')
+
+  var dbReference7 = firebase.database().ref('Top5News').child('Title3')
+  var dbReference8 = firebase.database().ref('Top5News').child('Summary3')
+  var dbReference9 = firebase.database().ref('Top5News').child('Source3')
+  dbReference1.on('value', snap => titleOne.innerHTML = `<center><b>${snap.val()}</b></center>`);
+  dbReference2.on('value', snap => summaryOne.innerHTML = `<caption>${snap.val()}</caption>`);
+  dbReference3.on('value', snap => sourceOne.innerHTML = `<cite>${snap.val()}</cite>`);
+
+  dbReference4.on('value', snap => titleTwo.innerHTML = `<center><b>${snap.val()}</b></center>`);
+  dbReference5.on('value', snap => summaryTwo.innerHTML = `<caption>${snap.val()}</caption>`);
+  dbReference6.on('value', snap => sourceTwo.innerHTML = `<cite>${snap.val()}</cite>`);
+
+  dbReference7.on('value', snap => titleThree.innerHTML = `<center><b>${snap.val()}</b></center>`);
+  dbReference8.on('value', snap => summaryThree.innerHTML = `<caption>${snap.val()}</caption>`);
+  dbReference9.on('value', snap => sourceThree.innerHTML = `<cite>${snap.val()}</cite>`);
+
+</script>
+<!-- FIREBASE STUFF [END] -->
+
+<!-- BEGINNING PART [START] -->
+
+  <div class="headerPart">
+    <div class="androidDownload"><i class="fab fa-google-play"></i></div>
+    <div class="iosDownload"><i class="fab fa-app-store"></i></div>
+    <div class="communicationConnection"><i class="fab fa-discord"></i></div>
+    <p class="headerDeclaration">QuickNews</p>
+  </div>
+<!-- BEGINNING PART [END] -->
+
+<!-- NEWS DECLARATION [START] -->
+<div class="newsDeclaration1">
+  <div class="card" id="leaderboardDeclaration" id="okLeaderboardStayPut1">
+    <div class="card-body" id="beginLeaderboard">
+      <h5 class="card-title" id="Top5News/Title1"></h5>
+      <p class="card-text" id="Top5News/Summary1"></p>
+      <a class="card-link" id="Top5News/Source1"></a>
+    </div>
+  </div>
+  <br />
+  <div class="card" id="leaderboardDeclaration" id="okLeaderboardStayPut1">
+    <div class="card-body" id="beginLeaderboard">
+      <h5 class="card-title" id="Top5News/Title2"></h5>
+      <p class="card-text" id="Top5News/Summary2"></p>
+      <a class="card-link" id="Top5News/Source2"></a>
+    </div>
+  </div>
+  <br />
+  <div class="card" id="leaderboardDeclaration" id="okLeaderboardStayPut1">
+    <div class="card-body" id="beginLeaderboard">
+      <h5 class="card-title" id="Top5News/Title3"></h5>
+      <p class="card-text" id="Top5News/Summary3"></p>
+      <a class="card-link" id="Top5News/Source3"></a>
+    </div>
+  </div>
+  <br />
+</div>
+<!-- NEWS DECLARATION [END] -->
+
+</body>
+</html>
+<!-- PROGRAMMED BY NISHANT SRIVASTAVA -->
